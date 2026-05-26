@@ -111,9 +111,18 @@
     .save-btn:active {
       background: #555;
     }
+    .input-field {
+      border: none;
+      border-bottom: 1px solid #999;
+      font-size: 15px;
+      padding: 2px 4px;
+      width: 180px;
+      font-family: inherit;
+    }
     @media print {
-      .sign-actions { display: none; }
+      .sign-actions, .save-btn { display: none; }
       canvas { border-color: #999; }
+      .input-field { border-bottom-color: #ccc; }
     }
   </style>
 </head>
@@ -124,7 +133,8 @@
     <div class="parties">
       <p><strong>양도인(갑)</strong> 고희연</p>
       <p><strong>양수인(을)</strong> 정다은</p>
-      <p><strong>소재지</strong> 서울 서대문구 홍제동</p>
+      <p><strong>상호</strong> 요가숲</p>
+      <p><strong>소재지</strong> 서울특별시 서대문구 홍제동 24-1번지 무악빌딩 202호</p>
     </div>
 
     <p>갑과 을은 위 소재지 요가원의 영업권 양수도에 관하여 아래와 같이 계약한다.</p>
@@ -140,7 +150,7 @@
         <li>총액: 금 <strong>1,000만원</strong></li>
         <li>가계약금: 금 <strong>100만원</strong> (<strong>2026. 5. 26</strong> 지급)</li>
         <li>잔금: 금 <strong>900만원</strong> (<strong>2026. 6. 28</strong> 지급)</li>
-        <li>입금 계좌(갑): __________________</li>
+        <li>입금 계좌(갑): <input type="text" class="input-field" placeholder="은행 계좌번호 입력"></li>
       </ol>
     </div>
 
