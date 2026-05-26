@@ -7,66 +7,97 @@
   <style>
     body {
       margin: 0;
-      padding: 40px;
+      padding: 24px;
       font-family: -apple-system, BlinkMacSystemFont, Pretendard, Apple SD Gothic Neo, sans-serif;
       background: #fff;
-      color: #222;
-      line-height: 2;
+      color: #333;
+      line-height: 1.9;
       font-size: 15px;
     }
     .wrap {
-      max-width: 720px;
+      max-width: 640px;
       margin: 0 auto;
-      padding: 48px;
+      padding: 32px 20px;
     }
     h1 {
-      font-size: 22px;
+      font-size: 20px;
       text-align: center;
-      margin: 0 0 36px;
-      letter-spacing: 0.08em;
+      margin: 0 0 32px;
+      font-weight: 600;
     }
-    .intro {
-      margin-bottom: 32px;
+    .parties {
+      margin-bottom: 28px;
+    }
+    .parties p {
+      margin: 4px 0;
     }
     .article {
-      margin-top: 28px;
+      margin-top: 24px;
     }
     .article-title {
-      font-weight: 700;
-      margin-bottom: 8px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      font-size: 15px;
     }
     .article ol {
-      padding-left: 20px;
+      padding-left: 18px;
       margin: 4px 0 0;
     }
     .article li {
-      margin-bottom: 6px;
+      margin-bottom: 5px;
     }
     .sign-area {
-      margin-top: 56px;
-      border-top: 1px solid #222;
-      padding-top: 24px;
-      text-align: center;
+      margin-top: 48px;
+      padding-top: 20px;
+      border-top: 1px solid #ccc;
     }
     .sign-date {
+      text-align: center;
+      margin-bottom: 28px;
+      font-size: 14px;
+      color: #555;
+    }
+    .sign-block {
       margin-bottom: 32px;
     }
-    .sign-row {
-      display: flex;
-      justify-content: space-between;
-      gap: 40px;
-      text-align: left;
-      margin-top: 24px;
-    }
-    .sign-col {
-      flex: 1;
-    }
-    .sign-col p {
-      margin: 6px 0;
+    .sign-block p {
+      margin: 4px 0;
       font-size: 14px;
     }
+    .sign-label {
+      font-weight: 600;
+      margin-bottom: 8px;
+      font-size: 15px;
+    }
+    canvas {
+      display: block;
+      width: 100%;
+      height: 120px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background: #fafafa;
+      touch-action: none;
+      cursor: crosshair;
+    }
+    .sign-actions {
+      display: flex;
+      gap: 8px;
+      margin-top: 8px;
+    }
+    .sign-actions button {
+      font-size: 13px;
+      padding: 6px 14px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      background: #fff;
+      cursor: pointer;
+    }
+    .sign-actions button:active {
+      background: #f0f0f0;
+    }
     @media print {
-      body { padding: 20px; }
+      .sign-actions { display: none; }
+      canvas { border-color: #999; }
     }
   </style>
 </head>
@@ -74,91 +105,150 @@
   <div class="wrap">
     <h1>영업권 양수도 계약서</h1>
 
-    <div class="intro">
-      <p><strong>양도인(갑)</strong>: 고희연</p>
-      <p><strong>양수인(을)</strong>: 정다은</p>
-      <p><strong>소재지</strong>: 서울 서대문구 홍제동</p>
-      <p>갑과 을은 위 소재지 요가원의 영업권 양수도에 관하여 아래와 같이 계약한다.</p>
+    <div class="parties">
+      <p><strong>양도인(갑)</strong> 고희연</p>
+      <p><strong>양수인(을)</strong> 정다은</p>
+      <p><strong>소재지</strong> 서울 서대문구 홍제동</p>
     </div>
 
+    <p>갑과 을은 위 소재지 요가원의 영업권 양수도에 관하여 아래와 같이 계약한다.</p>
+
     <div class="article">
-      <div class="article-title">제1조 (양도 대상)</div>
+      <div class="article-title">제1조 양도 대상</div>
       <p>영업권, 시설·집기·비품, 회원 정보 일체를 양도한다.</p>
     </div>
 
     <div class="article">
-      <div class="article-title">제2조 (대금 및 지급)</div>
+      <div class="article-title">제2조 대금</div>
       <ol>
-        <li>양도 대금 총액: 금 1,000만원</li>
-        <li>가계약금: 금 100만원 (2026년 5월 26일 지급)</li>
-        <li>잔금: 금 900만원 (2026년 6월 28일 지급)</li>
+        <li>총액 금 1,000만원</li>
+        <li>가계약금 금 100만원 (2026. 5. 26 지급)</li>
+        <li>잔금 금 900만원 (2026. 6. 28 지급)</li>
       </ol>
     </div>
 
     <div class="article">
-      <div class="article-title">제3조 (임대차 계약)</div>
+      <div class="article-title">제3조 임대차</div>
       <ol>
-        <li>을은 임대인과 2026년 7월 24일까지 임대차 계약을 체결한다.</li>
-        <li>임대 조건은 월 201만원(갑이 고지한 기존 조건)으로 하며, 조건이 상이할 경우 을은 계약을 해제하고 기지급 금액 전액을 반환받는다.</li>
-        <li>갑은 임대인에게 양수도 사실을 고지하고 을과의 계약 체결에 협조한다.</li>
+        <li>을은 임대인과 2026. 7. 24까지 임대차 계약을 체결한다.</li>
+        <li>임대 조건은 월 201만원(기존 조건)으로 하며, 조건이 상이할 경우 본 계약은 해제되고 기지급 금액 전액을 반환한다.</li>
+        <li>갑은 임대인에게 양수도 사실을 고지하고 계약 체결에 협조한다.</li>
       </ol>
     </div>
 
     <div class="article">
-      <div class="article-title">제4조 (회원 및 시설 인수)</div>
+      <div class="article-title">제4조 회원 및 시설</div>
       <ol>
-        <li>갑은 계약 체결 시점 기준 회원 정보, 잔여 회원권, 회원 수를 을에게 인계한다.</li>
-        <li>갑은 시설·집기·비품의 상태를 사실대로 고지하며, 고지 내용과 상이할 경우 을은 계약을 해제하고 기지급 금액 전액을 반환받는다.</li>
+        <li>갑은 계약 시점 기준 회원 정보, 잔여 회원권, 회원 수를 을에게 인계한다.</li>
+        <li>시설 상태가 사전 고지와 상이할 경우 을은 계약을 해제하고 기지급 금액을 반환받는다.</li>
       </ol>
     </div>
 
     <div class="article">
-      <div class="article-title">제5조 (7월 운영 책임)</div>
+      <div class="article-title">제5조 7월 운영</div>
       <ol>
-        <li>기존 회원 환불·민원 → 갑 책임</li>
-        <li>을이 신규 모집한 회원 → 을 책임</li>
+        <li>기존 회원 환불·민원은 갑이 책임진다.</li>
+        <li>을이 신규 모집한 회원은 을이 책임진다.</li>
       </ol>
     </div>
 
     <div class="article">
-      <div class="article-title">제6조 (인수인계)</div>
-      <p>갑은 회원 안내, 강사 연결, 운영 자료, 온라인 채널 이전 등 인수인계에 성실히 협조한다.</p>
+      <div class="article-title">제6조 인수인계</div>
+      <p>갑은 회원 안내, 강사 연결, 운영 자료 등 인수인계에 성실히 협조한다.</p>
     </div>
 
     <div class="article">
-      <div class="article-title">제7조 (계약 해제)</div>
+      <div class="article-title">제7조 계약 해제</div>
       <ol>
-        <li>갑의 귀책 → 기지급 금액 전액 반환 + 손해배상</li>
-        <li>을의 귀책 → 가계약금 갑에게 귀속</li>
-        <li>시설·계약 내용이 사전 고지와 상이할 경우 → 을은 해제 가능, 전액 반환</li>
+        <li>갑의 귀책 시 기지급 금액 전액 반환</li>
+        <li>을의 귀책 시 가계약금은 갑에게 귀속</li>
+        <li>시설·임대 조건이 고지 내용과 상이할 경우 을은 해제 가능, 전액 반환</li>
       </ol>
     </div>
 
-    <div class="article">
-      <div class="article-title">제8조 (특약)</div>
-      <ol>
-        <li>__________________________________________________________</li>
-        <li>__________________________________________________________</li>
-      </ol>
-    </div>
-
+    <!-- 서명 -->
     <div class="sign-area">
-      <p class="sign-date"><strong>2026년 5월 26일</strong></p>
-      <div class="sign-row">
-        <div class="sign-col">
-          <p><strong>양도인 (갑)</strong></p>
-          <p>성명: 고희연</p>
-          <p>연락처: __________________</p>
-          <p>서명: __________________</p>
+      <p class="sign-date">2026년 5월 26일</p>
+
+      <div class="sign-block">
+        <p class="sign-label">양도인 (갑) 고희연</p>
+        <canvas id="sign-gap"></canvas>
+        <div class="sign-actions">
+          <button onclick="clearCanvas('sign-gap')">다시 쓰기</button>
         </div>
-        <div class="sign-col">
-          <p><strong>양수인 (을)</strong></p>
-          <p>성명: 정다은</p>
-          <p>연락처: __________________</p>
-          <p>서명: __________________</p>
+      </div>
+
+      <div class="sign-block">
+        <p class="sign-label">양수인 (을) 정다은</p>
+        <p>연락처: __________________</p>
+        <canvas id="sign-eul"></canvas>
+        <div class="sign-actions">
+          <button onclick="clearCanvas('sign-eul')">다시 쓰기</button>
         </div>
       </div>
     </div>
   </div>
+
+  <script>
+    function initCanvas(id) {
+      const canvas = document.getElementById(id);
+      const ctx = canvas.getContext('2d');
+      let drawing = false;
+
+      function resize() {
+        const rect = canvas.getBoundingClientRect();
+        canvas.width = rect.width * 2;
+        canvas.height = rect.height * 2;
+        ctx.scale(2, 2);
+        ctx.lineWidth = 2;
+        ctx.lineCap = 'round';
+        ctx.strokeStyle = '#222';
+      }
+      resize();
+
+      function getPos(e) {
+        const rect = canvas.getBoundingClientRect();
+        const t = e.touches ? e.touches[0] : e;
+        return { x: t.clientX - rect.left, y: t.clientY - rect.top };
+      }
+
+      function start(e) {
+        e.preventDefault();
+        drawing = true;
+        const p = getPos(e);
+        ctx.beginPath();
+        ctx.moveTo(p.x, p.y);
+      }
+
+      function move(e) {
+        if (!drawing) return;
+        e.preventDefault();
+        const p = getPos(e);
+        ctx.lineTo(p.x, p.y);
+        ctx.stroke();
+      }
+
+      function end() {
+        drawing = false;
+      }
+
+      canvas.addEventListener('mousedown', start);
+      canvas.addEventListener('mousemove', move);
+      canvas.addEventListener('mouseup', end);
+      canvas.addEventListener('mouseleave', end);
+      canvas.addEventListener('touchstart', start);
+      canvas.addEventListener('touchmove', move);
+      canvas.addEventListener('touchend', end);
+    }
+
+    function clearCanvas(id) {
+      const canvas = document.getElementById(id);
+      const ctx = canvas.getContext('2d');
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+
+    initCanvas('sign-gap');
+    initCanvas('sign-eul');
+  </script>
 </body>
 </html>
