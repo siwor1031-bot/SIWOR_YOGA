@@ -125,6 +125,8 @@
       .input-field { border-bottom-color: #ccc; }
     }
   </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 <body>
   <div class="wrap">
@@ -277,10 +279,60 @@
     initCanvas('sign-eul');
 
     function savePDF() {
+      const btn = document.querySelector('.save-btn');
+      btn.textContent = '저장 중...';
+      btn.disabled = true;
+
       const btns = document.querySelectorAll('.sign-actions, .save-btn');
       btns.forEach(b => b.style.display = 'none');
-      window.print();
-      setTimeout(() => btns.forEach(b => b.style.display = ''), 500);
+
+      const wrap = document.querySelector('.wrap');
+      html2canvas(wrap, { scale: 2, useCORS: true }).then(canvas => {
+        const imgData = canvas.toDataURL('image/png');
+        const { jsPDF } = window.jspdf;
+        const pdf = new jsPDF('p', 'mm', 'a4');
+        const pageW = pdf.internal.pageSize.getWidth();
+        const pageH = pdf.internal.pageSize.getHeight();
+        const imgW = pageW - 20;
+        const imgH = (canvas.height * imgW) / canvas.width;
+
+        let y = 10;
+        let remaining = imgH;
+        const pageContent = pageH - 20;
+
+        if (imgH <= pageContent) {
+          pdf.addImage(imgData, 'PNG', 10, 10, imgW, imgH);
+        } else {
+          // 여러 페이지 처리
+          const totalPages = Math.ceil(imgH / pageContent);
+          for (let i = 0; i < totalPages; i++) {
+            if (i > 0) pdf.addPage();
+            const srcY = (i * pageContent / imgH) * canvas.height;
+            const srcH = Math.min((pageContent / imgH) * canvas.height, canvas.height - srcY);
+            const destH = (srcH / canvas.height) * imgH;
+
+            const pageCanvas = document.createElement('canvas');
+            pageCanvas.width = canvas.width;
+            pageCanvas.height = srcH;
+            const pCtx = pageCanvas.getContext('2d');
+            pCtx.drawImage(canvas, 0, srcY, canvas.width, srcH, 0, 0, canvas.width, srcH);
+
+            const pageImg = pageCanvas.toDataURL('image/png');
+            pdf.addImage(pageImg, 'PNG', 10, 10, imgW, destH);
+          }
+        }
+
+        pdf.save('요가숲_영업권양수도계약서.pdf');
+
+        btns.forEach(b => b.style.display = '');
+        btn.textContent = 'PDF로 저장';
+        btn.disabled = false;
+      }).catch(err => {
+        alert('PDF 저장 실패: ' + err.message);
+        btns.forEach(b => b.style.display = '');
+        btn.textContent = 'PDF로 저장';
+        btn.disabled = false;
+      });
     }
   </script>
 </body>
