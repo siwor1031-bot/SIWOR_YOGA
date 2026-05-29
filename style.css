@@ -420,7 +420,7 @@ body {
 /* Responsive */
 @media (max-width: 768px) {
   .header {
-    padding: 1.4rem 1.5rem;
+    padding: 1.2rem 1.2rem;
   }
 
   .menu-btn {
@@ -452,25 +452,77 @@ body {
     font-size: 0.85rem;
   }
 
+  .hero {
+    min-height: 85vh;
+  }
+
   .hero-title {
-    font-size: 2.2rem;
+    font-size: 2rem;
+  }
+
+  .hero-desc {
+    font-size: 0.85rem;
   }
 
   .section {
-    padding: 5rem 1.5rem;
+    padding: 4rem 1.2rem;
+  }
+
+  .section-title {
+    font-size: 0.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .container {
+    max-width: 100%;
+  }
+
+  .about-lead {
+    font-size: 1rem;
   }
 
   .about-values {
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1.2rem;
   }
 
   .program-grid,
   .price-grid {
     grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .program-item,
+  .price-card {
+    padding: 1.5rem;
+  }
+
+  /* Schedule table: horizontal scroll on mobile */
+  .schedule-wrap,
+  .schedule-table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   .schedule-table {
-    min-width: 520px;
+    min-width: 480px;
+    font-size: 0.7rem;
+  }
+
+  .schedule-table th,
+  .schedule-table td {
+    padding: 0.6rem 0.4rem;
+  }
+
+  /* Contact */
+  .contact-info {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 2rem 1.2rem;
+    font-size: 0.65rem;
   }
 }
