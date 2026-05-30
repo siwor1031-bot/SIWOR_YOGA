@@ -315,84 +315,64 @@ body {
 }
 
 /* Price */
-.price-category {
-  margin-bottom: 2.2rem;
+.price-block {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border);
 }
 
-.price-category-label {
-  font-size: 0.82rem;
+.price-block:last-of-type {
+  border-bottom: none;
+  margin-bottom: 1.5rem;
+}
+
+.price-block-title {
+  font-size: 0.9rem;
   font-weight: 300;
-  letter-spacing: 0.05em;
-  margin-bottom: 0.8rem;
+  margin-bottom: 1rem;
   color: var(--accent);
 }
 
-.price-simple {
-  border-top: 1px solid var(--border);
+.price-block-title em {
+  font-style: normal;
+  font-size: 0.7rem;
+  color: var(--olive);
+  margin-left: 0.5rem;
 }
 
-.price-row {
+.price-block--main {
+  padding: 1.8rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  border-bottom: 1px solid var(--border);
+}
+
+.price-block-row {
   display: flex;
   justify-content: space-between;
-  padding: 0.75rem 0;
-  border-bottom: 1px solid var(--border);
-  font-size: 0.92rem;
+  align-items: center;
+  padding: 0.6rem 0;
+  font-size: 0.95rem;
 }
 
-.price-row span:last-child {
+.price-block-label {
+  font-weight: 200;
+  color: var(--text);
+}
+
+.price-block-value {
   font-family: 'Inter', sans-serif;
-  font-weight: 300;
-}
-
-.price-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-}
-
-.price-card {
-  background: var(--card-bg);
-  padding: 1.5rem 1.3rem;
-  border-radius: 3px;
-  position: relative;
-  border: 1px solid var(--border);
-}
-
-.price-card--main {
-  border-color: var(--point);
-}
-
-.price-badge {
-  position: absolute;
-  top: -0.5rem;
-  right: 1rem;
-  background: var(--point);
-  color: #fff;
-  font-size: 0.6rem;
-  font-weight: 300;
-  padding: 0.2rem 0.6rem;
-  border-radius: 2px;
-}
-
-.price-label {
-  display: block;
-  font-size: 0.78rem;
-  font-weight: 300;
-  letter-spacing: 0.05em;
-  color: var(--muted);
-  margin-bottom: 0.8rem;
-}
-
-.price-card .price-row {
-  border: none;
-  padding: 0.45rem 0;
-  font-size: 0.88rem;
+  font-weight: 400;
+  font-size: 1rem;
+  color: var(--accent);
 }
 
 .price-note {
-  margin-top: 1.2rem;
-  font-size: 0.75rem;
+  margin-top: 1.5rem;
+  font-size: 0.78rem;
   color: var(--muted);
+  line-height: 1.8;
 }
 
 /* Contact */
@@ -521,11 +501,6 @@ body {
   .about-values {
     flex-direction: column;
     gap: 1rem;
-  }
-
-  .price-grid {
-    grid-template-columns: 1fr;
-    gap: 0.8rem;
   }
 
   .schedule-table {
