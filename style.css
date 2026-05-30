@@ -13,6 +13,7 @@
   --accent: #333333;
   --card-bg: #FFFFFF;
   --point: #444444;
+  --olive: #6B7B5E;
 }
 
 html {
@@ -44,24 +45,22 @@ body {
 }
 
 .logo {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   font-weight: 300;
-  letter-spacing: 0.5em;
+  letter-spacing: 0.15em;
   text-decoration: none;
   color: var(--text);
 }
 
 .gnb {
   display: flex;
-  gap: 2.5rem;
+  gap: 2.2rem;
 }
 
 .gnb a {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   font-weight: 200;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.05em;
   text-decoration: none;
   color: var(--muted);
   transition: color 0.2s;
@@ -90,7 +89,7 @@ body {
 
 /* Hero */
 .hero {
-  min-height: 80vh;
+  min-height: 75vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -104,7 +103,7 @@ body {
 }
 
 .hero-title {
-  font-size: 3.2rem;
+  font-size: 3.5rem;
   font-weight: 100;
   letter-spacing: 0.3em;
   margin-bottom: 1.5rem;
@@ -112,23 +111,22 @@ body {
 }
 
 .hero-desc {
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   font-weight: 200;
   color: var(--text);
-  line-height: 2;
+  line-height: 2.1;
   margin-bottom: 1.2rem;
-  letter-spacing: 0.02em;
 }
 
 .hero-sub {
   font-size: 0.82rem;
   color: var(--muted);
-  letter-spacing: 0.08em;
+  letter-spacing: 0.05em;
 }
 
 /* Sections */
 .section {
-  padding: 4.5rem 2rem;
+  padding: 5rem 2rem;
 }
 
 .section-alt {
@@ -141,18 +139,114 @@ body {
 }
 
 .container-wide {
-  max-width: 720px;
+  max-width: 760px;
   margin: 0 auto;
 }
 
 .section-title {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.82rem;
+  font-size: 0.9rem;
   font-weight: 300;
-  letter-spacing: 0.35em;
-  text-transform: uppercase;
+  letter-spacing: 0.1em;
   color: var(--muted);
-  margin-bottom: 2.2rem;
+  margin-bottom: 2.5rem;
+}
+
+/* Schedule */
+.level-guide {
+  display: flex;
+  gap: 1.8rem;
+  margin-bottom: 2.5rem;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+.level-guide em {
+  font-style: normal;
+  color: var(--olive);
+  margin-right: 0.3rem;
+}
+
+.schedule-sub {
+  font-size: 0.85rem;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  margin-bottom: 1.2rem;
+  color: var(--accent);
+}
+
+.schedule-table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 2.5rem;
+}
+
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.schedule-table th {
+  font-weight: 300;
+  font-size: 0.9rem;
+  color: var(--accent);
+  padding: 1rem 0.8rem;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+
+.schedule-table td {
+  padding: 1.2rem 0.6rem;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+.time-label {
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: var(--muted);
+  text-align: left !important;
+  white-space: nowrap;
+  padding-right: 1.2rem !important;
+}
+
+.class-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.class-time {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--accent);
+}
+
+.class-name {
+  font-size: 0.82rem;
+  font-weight: 200;
+  color: var(--text);
+}
+
+.class-level {
+  font-size: 0.7rem;
+  color: var(--olive);
+}
+
+.private-info {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.schedule-note {
+  font-size: 0.78rem;
+  color: var(--muted);
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
 }
 
 /* About */
@@ -182,8 +276,8 @@ body {
 .about-programs .program-line {
   display: flex;
   justify-content: space-between;
-  padding: 0.55rem 0;
-  font-size: 0.92rem;
+  padding: 0.6rem 0;
+  font-size: 0.9rem;
 }
 
 .about-programs .program-line span:first-child {
@@ -210,8 +304,8 @@ body {
 
 .value-num {
   font-family: 'Inter', sans-serif;
-  font-size: 0.62rem;
-  color: var(--point);
+  font-size: 0.65rem;
+  color: var(--olive);
   letter-spacing: 0.1em;
 }
 
@@ -220,64 +314,15 @@ body {
   color: var(--muted);
 }
 
-/* Schedule */
-.schedule-table-wrap {
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-}
-
-.schedule-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.9rem;
-}
-
-.schedule-table th {
-  font-family: 'Inter', sans-serif;
-  font-weight: 300;
-  font-size: 0.8rem;
-  letter-spacing: 0.08em;
-  color: var(--muted);
-  padding: 0.8rem 1rem;
-  text-align: center;
-  border-bottom: 1px solid var(--border);
-}
-
-.schedule-table td {
-  padding: 1rem;
-  text-align: center;
-  border-bottom: 1px solid var(--border);
-}
-
-.time-cell {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.82rem;
-  color: var(--muted);
-  font-weight: 200;
-}
-
-.class-cell {
-  font-weight: 300;
-  font-size: 0.9rem;
-}
-
-.schedule-note {
-  margin-top: 1.5rem;
-  font-size: 0.72rem;
-  color: var(--muted);
-  text-align: center;
-  letter-spacing: 0.03em;
-}
-
 /* Price */
 .price-category {
   margin-bottom: 2.2rem;
 }
 
 .price-category-label {
-  font-size: 0.74rem;
+  font-size: 0.82rem;
   font-weight: 300;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
   margin-bottom: 0.8rem;
   color: var(--accent);
 }
@@ -297,7 +342,6 @@ body {
 .price-row span:last-child {
   font-family: 'Inter', sans-serif;
   font-weight: 300;
-  letter-spacing: 0.02em;
 }
 
 .price-grid {
@@ -324,19 +368,17 @@ body {
   right: 1rem;
   background: var(--point);
   color: #fff;
-  font-size: 0.58rem;
+  font-size: 0.6rem;
   font-weight: 300;
   padding: 0.2rem 0.6rem;
   border-radius: 2px;
-  letter-spacing: 0.06em;
 }
 
 .price-label {
   display: block;
-  font-family: 'Inter', sans-serif;
-  font-size: 0.7rem;
+  font-size: 0.78rem;
   font-weight: 300;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.05em;
   color: var(--muted);
   margin-bottom: 0.8rem;
 }
@@ -344,14 +386,13 @@ body {
 .price-card .price-row {
   border: none;
   padding: 0.45rem 0;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
 }
 
 .price-note {
   margin-top: 1.2rem;
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   color: var(--muted);
-  letter-spacing: 0.02em;
 }
 
 /* Contact */
@@ -360,16 +401,15 @@ body {
 }
 
 .contact-address {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   margin-bottom: 0.4rem;
   font-weight: 200;
 }
 
 .contact-sns {
   font-family: 'Inter', sans-serif;
-  font-size: 0.78rem;
+  font-size: 0.85rem;
   color: var(--muted);
-  letter-spacing: 0.05em;
   font-weight: 200;
 }
 
@@ -377,10 +417,9 @@ body {
 .footer {
   padding: 2rem;
   text-align: center;
-  font-family: 'Inter', sans-serif;
-  font-size: 0.62rem;
+  font-size: 0.7rem;
   color: var(--muted);
-  letter-spacing: 0.12em;
+  letter-spacing: 0.05em;
 }
 
 /* Mobile */
@@ -415,23 +454,28 @@ body {
   }
 
   .gnb a {
-    font-size: 0.85rem;
+    font-size: 1rem;
   }
 
   .hero {
-    min-height: 70vh;
+    min-height: 65vh;
   }
 
   .hero-title {
-    font-size: 2.4rem;
+    font-size: 2.6rem;
   }
 
   .hero-desc {
-    font-size: 0.95rem;
+    font-size: 1rem;
   }
 
   .section {
-    padding: 3rem 1.2rem;
+    padding: 3.5rem 1.2rem;
+  }
+
+  .level-guide {
+    gap: 1.2rem;
+    font-size: 0.75rem;
   }
 
   .about-values {
@@ -445,7 +489,6 @@ body {
   }
 
   .schedule-table {
-    min-width: 480px;
-    font-size: 0.75rem;
+    min-width: 520px;
   }
 }
