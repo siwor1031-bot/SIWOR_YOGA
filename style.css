@@ -172,102 +172,159 @@ body {
   margin-bottom: 2.5rem;
 }
 
-/* Schedule */
-.level-guide {
+/* Schedule Page - Timetable */
+.schedule-page .page-title {
+  margin-bottom: 1.5rem;
+}
+
+.level-legend {
   display: flex;
-  gap: 1.8rem;
+  gap: 1.5rem;
   margin-bottom: 2.5rem;
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   color: var(--muted);
 }
 
-.level-guide em {
-  font-style: normal;
-  color: var(--olive);
-  margin-right: 0.3rem;
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
 }
 
-.schedule-sub {
-  font-size: 0.85rem;
-  font-weight: 300;
-  letter-spacing: 0.05em;
-  margin-bottom: 1.2rem;
-  color: var(--accent);
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
 }
 
-.schedule-table-wrap {
+.dot--1 { background: #B8C4B0; }
+.dot--2 { background: #7A9B6B; }
+.dot--3 { background: #4A6B3A; }
+
+.timetable {
+  width: 100%;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-  margin-bottom: 2.5rem;
 }
 
-.schedule-table {
-  width: 100%;
-  border-collapse: collapse;
+.tt-header, .tt-row {
+  display: grid;
+  grid-template-columns: 50px repeat(7, 1fr);
+  min-width: 600px;
 }
 
-.schedule-table th {
-  font-weight: 300;
+.tt-header {
+  border-bottom: 2px solid var(--accent);
+}
+
+.tt-corner {
+  padding: 0.8rem 0;
+}
+
+.tt-day {
+  padding: 0.8rem 0.3rem;
+  text-align: center;
   font-size: 0.9rem;
-  color: var(--accent);
-  padding: 1rem 0.8rem;
-  text-align: center;
-  border-bottom: 1px solid var(--border);
-}
-
-.schedule-table td {
-  padding: 1.2rem 0.6rem;
-  text-align: center;
-  border-bottom: 1px solid var(--border);
-  vertical-align: top;
-}
-
-.time-label {
-  font-size: 0.8rem;
-  font-weight: 300;
-  color: var(--muted);
-  text-align: left !important;
-  white-space: nowrap;
-  padding-right: 1.2rem !important;
-}
-
-.class-cell {
-  vertical-align: middle;
-}
-
-.class-cell .class-time {
-  display: block;
-  font-family: 'Inter', sans-serif;
-  font-size: 0.85rem;
   font-weight: 400;
   color: var(--accent);
 }
 
-.class-cell .class-name {
-  display: block;
-  font-size: 0.82rem;
-  font-weight: 200;
-  color: var(--text);
-}
-
-.class-cell .class-level {
-  display: block;
-  font-size: 0.7rem;
-  color: var(--olive);
-}
-
-.private-info {
-  font-size: 0.85rem;
+.tt-day--weekend {
   color: var(--muted);
-  line-height: 1.8;
-  margin-bottom: 2rem;
 }
 
-.schedule-note {
+.tt-row {
+  border-bottom: 1px solid var(--border);
+}
+
+.tt-time {
+  padding: 1.5rem 0;
   font-size: 0.78rem;
+  font-weight: 300;
   color: var(--muted);
-  padding-top: 1.5rem;
+}
+
+.tt-cell {
+  padding: 1rem 0.3rem;
+  text-align: center;
+  min-height: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.1rem;
+  position: relative;
+}
+
+.tt-filled::before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 3px;
+  right: 3px;
+  bottom: 6px;
+  border-radius: 4px;
+  opacity: 0.13;
+}
+
+.tt-level-1::before { background: #B8C4B0; }
+.tt-level-2::before { background: #7A9B6B; }
+.tt-level-3::before { background: #4A6B3A; }
+
+.tt-hour {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--accent);
+  position: relative;
+}
+
+.tt-name {
+  font-size: 0.82rem;
+  font-weight: 300;
+  color: var(--text);
+  position: relative;
+}
+
+.tt-duration {
+  font-size: 0.68rem;
+  color: var(--muted);
+  position: relative;
+}
+
+.private-section {
+  margin-top: 3rem;
+  padding-top: 2rem;
   border-top: 1px solid var(--border);
+}
+
+.private-grid {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.private-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.private-type {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--accent);
+}
+
+.private-desc {
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+.private-contact {
+  font-size: 0.8rem;
+  color: var(--muted);
 }
 
 /* About (page) */
@@ -570,7 +627,7 @@ body {
     gap: 1rem;
   }
 
-  .schedule-table {
-    min-width: 520px;
+  .tt-header, .tt-row {
+    min-width: 560px;
   }
 }

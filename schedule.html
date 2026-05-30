@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>시간표 — 시월요가</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400&family=Noto+Sans+KR:wght@100;200;300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500&family=Noto+Sans+KR:wght@100;200;300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -23,121 +23,116 @@
     </button>
   </header>
 
-  <main class="page-content">
+  <main class="page-content schedule-page">
     <h1 class="page-title">시간표</h1>
 
-    <div class="level-guide">
-      <span><em>✱</em> 시작</span>
-      <span><em>✱✱</em> 중급</span>
-      <span><em>✱✱✱</em> 숙련</span>
+    <div class="level-legend">
+      <span class="legend-item"><span class="dot dot--1"></span> 시작</span>
+      <span class="legend-item"><span class="dot dot--2"></span> 중급</span>
+      <span class="legend-item"><span class="dot dot--3"></span> 숙련</span>
     </div>
 
-    <h2 class="sub-title">그룹 레슨</h2>
-    <div class="schedule-table-wrap">
-      <table class="schedule-table">
-        <thead>
-          <tr>
-            <th></th>
-            <th>월</th>
-            <th>화</th>
-            <th>수</th>
-            <th>목</th>
-            <th>금</th>
-            <th>토</th>
-            <th>일</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="time-label">오전</td>
-            <td class="class-cell">
-              <span class="class-time">10:00</span>
-              <span class="class-name">테라피</span>
-              <span class="class-level">✱</span>
-            </td>
-            <td></td>
-            <td class="class-cell">
-              <span class="class-time">10:00</span>
-              <span class="class-name">테라피</span>
-              <span class="class-level">✱</span>
-            </td>
-            <td></td>
-            <td class="class-cell">
-              <span class="class-time">10:00</span>
-              <span class="class-name">테라피</span>
-              <span class="class-level">✱</span>
-            </td>
-            <td></td>
-            <td class="class-cell">
-              <span class="class-time">11:00</span>
-              <span class="class-name">빈야사</span>
-              <span class="class-detail">70분</span>
-              <span class="class-level">✱✱</span>
-            </td>
-          </tr>
-          <tr>
-            <td class="time-label">저녁</td>
-            <td class="class-cell">
-              <span class="class-time">19:00</span>
-              <span class="class-name">빈야사</span>
-              <span class="class-level">✱✱</span>
-            </td>
-            <td class="class-cell">
-              <span class="class-time">19:00</span>
-              <span class="class-name">테라피</span>
-              <span class="class-level">✱</span>
-            </td>
-            <td class="class-cell">
-              <span class="class-time">19:00</span>
-              <span class="class-name">빈야사</span>
-              <span class="class-level">✱✱</span>
-            </td>
-            <td class="class-cell">
-              <span class="class-time">19:00</span>
-              <span class="class-name">테라피</span>
-              <span class="class-level">✱</span>
-            </td>
-            <td class="class-cell">
-              <span class="class-time">19:00</span>
-              <span class="class-name">빈야사</span>
-              <span class="class-detail">70분</span>
-              <span class="class-level">✱✱</span>
-            </td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td class="time-label"></td>
-            <td class="class-cell">
-              <span class="class-time">20:15</span>
-              <span class="class-name">테라피</span>
-              <span class="class-level">✱</span>
-            </td>
-            <td class="class-cell">
-              <span class="class-time">20:15</span>
-              <span class="class-name">에볼루션</span>
-              <span class="class-level">✱✱✱</span>
-            </td>
-            <td class="class-cell">
-              <span class="class-time">20:15</span>
-              <span class="class-name">테라피</span>
-              <span class="class-level">✱</span>
-            </td>
-            <td class="class-cell">
-              <span class="class-time">20:15</span>
-              <span class="class-name">에볼루션</span>
-              <span class="class-level">✱✱✱</span>
-            </td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="timetable">
+      <div class="tt-header">
+        <div class="tt-corner"></div>
+        <div class="tt-day">월</div>
+        <div class="tt-day">화</div>
+        <div class="tt-day">수</div>
+        <div class="tt-day">목</div>
+        <div class="tt-day">금</div>
+        <div class="tt-day tt-day--weekend">토</div>
+        <div class="tt-day tt-day--weekend">일</div>
+      </div>
+
+      <div class="tt-row">
+        <div class="tt-time">오전</div>
+        <div class="tt-cell tt-filled tt-level-1">
+          <span class="tt-hour">10:00</span>
+          <span class="tt-name">테라피</span>
+        </div>
+        <div class="tt-cell"></div>
+        <div class="tt-cell tt-filled tt-level-1">
+          <span class="tt-hour">10:00</span>
+          <span class="tt-name">테라피</span>
+        </div>
+        <div class="tt-cell"></div>
+        <div class="tt-cell tt-filled tt-level-1">
+          <span class="tt-hour">10:00</span>
+          <span class="tt-name">테라피</span>
+        </div>
+        <div class="tt-cell"></div>
+        <div class="tt-cell tt-filled tt-level-2">
+          <span class="tt-hour">11:00</span>
+          <span class="tt-name">빈야사</span>
+          <span class="tt-duration">70분</span>
+        </div>
+      </div>
+
+      <div class="tt-row">
+        <div class="tt-time">저녁</div>
+        <div class="tt-cell tt-filled tt-level-2">
+          <span class="tt-hour">19:00</span>
+          <span class="tt-name">빈야사</span>
+        </div>
+        <div class="tt-cell tt-filled tt-level-1">
+          <span class="tt-hour">19:00</span>
+          <span class="tt-name">테라피</span>
+        </div>
+        <div class="tt-cell tt-filled tt-level-2">
+          <span class="tt-hour">19:00</span>
+          <span class="tt-name">빈야사</span>
+        </div>
+        <div class="tt-cell tt-filled tt-level-1">
+          <span class="tt-hour">19:00</span>
+          <span class="tt-name">테라피</span>
+        </div>
+        <div class="tt-cell tt-filled tt-level-2">
+          <span class="tt-hour">19:00</span>
+          <span class="tt-name">빈야사</span>
+          <span class="tt-duration">70분</span>
+        </div>
+        <div class="tt-cell"></div>
+        <div class="tt-cell"></div>
+      </div>
+
+      <div class="tt-row">
+        <div class="tt-time"></div>
+        <div class="tt-cell tt-filled tt-level-1">
+          <span class="tt-hour">20:15</span>
+          <span class="tt-name">테라피</span>
+        </div>
+        <div class="tt-cell tt-filled tt-level-3">
+          <span class="tt-hour">20:15</span>
+          <span class="tt-name">에볼루션</span>
+        </div>
+        <div class="tt-cell tt-filled tt-level-1">
+          <span class="tt-hour">20:15</span>
+          <span class="tt-name">테라피</span>
+        </div>
+        <div class="tt-cell tt-filled tt-level-3">
+          <span class="tt-hour">20:15</span>
+          <span class="tt-name">에볼루션</span>
+        </div>
+        <div class="tt-cell"></div>
+        <div class="tt-cell"></div>
+        <div class="tt-cell"></div>
+      </div>
     </div>
 
-    <h2 class="sub-title">개인 레슨</h2>
-    <p class="private-info">1:1 · 2:1 · 시간 협의<br>문의 @siwol.yoga</p>
+    <div class="private-section">
+      <h2 class="sub-title">개인 레슨</h2>
+      <div class="private-grid">
+        <div class="private-item">
+          <span class="private-type">1:1</span>
+          <span class="private-desc">시간 협의</span>
+        </div>
+        <div class="private-item">
+          <span class="private-type">2:1</span>
+          <span class="private-desc">시간 협의</span>
+        </div>
+      </div>
+      <p class="private-contact">문의 @siwol.yoga</p>
+    </div>
   </main>
 
   <footer class="footer">
