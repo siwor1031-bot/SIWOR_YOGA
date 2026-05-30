@@ -413,9 +413,44 @@ body {
   font-weight: 200;
 }
 
-.map-wrap {
+.map-link {
+  display: inline-block;
+  margin-top: 1.5rem;
+  font-size: 0.82rem;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  padding: 0.6rem 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  transition: border-color 0.2s;
+}
+
+.map-link:hover {
+  border-color: var(--accent);
+}
+
+.parking-info {
   margin-top: 2rem;
-  max-width: 100%;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.parking-title {
+  font-weight: 300;
+  color: var(--accent);
+  margin-bottom: 0.4rem;
+  font-size: 0.82rem;
+}
+
+.class-cell .class-detail {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--muted);
 }
 
 /* Footer */
