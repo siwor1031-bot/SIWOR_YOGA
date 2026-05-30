@@ -5,13 +5,12 @@
 }
 
 :root {
-  --bg: #F7F7F6;
-  --bg-alt: #EFEEEC;
+  --bg: #FFFFFF;
+  --bg-alt: #FFFFFF;
   --text: #222222;
-  --muted: #888888;
-  --border: #E0E0DE;
-  --accent: #333333;
-  --card-bg: #FFFFFF;
+  --muted: #999999;
+  --border: #E8E8E6;
+  --accent: #222222;
   --point: #444444;
   --olive: #6B7B5E;
 }
@@ -39,7 +38,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1.4rem 2.5rem;
-  background: rgba(247, 247, 246, 0.92);
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(14px);
   z-index: 100;
 }
@@ -94,7 +93,7 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: var(--bg-alt);
+  background: var(--bg);
 }
 
 .hero-inner {
@@ -452,7 +451,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(247, 247, 246, 0.98);
+    background: rgba(255, 255, 255, 0.98);
     flex-direction: column;
     align-items: center;
     justify-content: center;
