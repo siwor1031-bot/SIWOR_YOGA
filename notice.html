@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>유의사항 — 시월요가</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400&family=Noto+Sans+KR:wght@100;200;300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <a href="siwol-yoga.html" class="logo">시월요가</a>
+    <nav class="gnb">
+      <a href="about.html">소개</a>
+      <a href="schedule.html">시간표</a>
+      <a href="price.html">수강료</a>
+      <a href="notice.html" class="active">유의사항</a>
+    </nav>
+    <button class="menu-btn" aria-label="메뉴 열기">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <main class="page-content">
+    <h1 class="page-title">유의사항</h1>
+
+    <h2 class="sub-title">예약 및 취소</h2>
+    <ul class="notice-list">
+      <li>수업 예약은 최소 <strong>2시간 전</strong>까지 가능합니다.</li>
+      <li>예약 취소는 수업 시작 <strong>4시간 전</strong>까지 가능합니다.</li>
+      <li>당일 취소 및 노쇼(No-show) 시 1회 차감됩니다.</li>
+      <li>수업 시작 5분 전까지 입장해 주세요.</li>
+      <li>예약은 DM(@siwol.yoga) 또는 전화로 가능합니다.</li>
+    </ul>
+
+    <h2 class="sub-title">수업 안내</h2>
+    <ul class="notice-list">
+      <li>소수 정원제(최대 6명)로 운영됩니다.</li>
+      <li>개인 요가매트 지참을 권장합니다.</li>
+      <li>편안한 운동복을 착용해 주세요.</li>
+      <li>수업 1시간 전부터는 과식을 피해 주세요.</li>
+    </ul>
+
+    <h2 class="sub-title">환불 규정</h2>
+    <ul class="notice-list">
+      <li>수강 시작 전: <strong>전액 환불</strong></li>
+      <li>수강 시작 후: 잔여 횟수 기준 일할 계산 후 환불</li>
+      <li>환불 수수료: 결제 금액의 10%</li>
+      <li>기간제 중도 해지 시 이용 기간은 원데이 단가로 정산됩니다.</li>
+      <li>환불 처리는 영업일 기준 3~5일 소요됩니다.</li>
+    </ul>
+  </main>
+
+  <footer class="footer">
+    <span>© 2026 시월요가</span>
+  </footer>
+
+  <script>
+    const menuBtn = document.querySelector('.menu-btn');
+    const gnb = document.querySelector('.gnb');
+    menuBtn.addEventListener('click', () => {
+      gnb.classList.toggle('open');
+      menuBtn.classList.toggle('active');
+    });
+    document.querySelectorAll('.gnb a').forEach(a => {
+      a.addEventListener('click', () => {
+        gnb.classList.remove('open');
+        menuBtn.classList.remove('active');
+      });
+    });
+  </script>
+</body>
+</html>

@@ -270,11 +270,7 @@ body {
   border-top: 1px solid var(--border);
 }
 
-/* About */
-.about-content {
-  max-width: 480px;
-}
-
+/* About (page) */
 .about-lead {
   font-size: 1.2rem;
   font-weight: 200;
@@ -282,14 +278,14 @@ body {
   line-height: 1.8;
 }
 
-.about-content > p {
+.about-body {
   color: var(--muted);
-  margin-bottom: 2.2rem;
+  margin-bottom: 2.5rem;
   font-size: 0.95rem;
 }
 
 .about-programs {
-  margin-bottom: 2.2rem;
+  margin-bottom: 2.5rem;
   padding: 1.2rem 0;
   border-top: 1px solid var(--border);
 }
