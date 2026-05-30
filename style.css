@@ -7,11 +7,11 @@
 :root {
   --bg: #E8E8E8;
   --bg-alt: #E8E8E8;
-  --text: #1A1A1A;
-  --muted: #6E6E6E;
+  --text: #111111;
+  --muted: #555555;
   --border: #CFCFCF;
-  --accent: #1A1A1A;
-  --point: #333333;
+  --accent: #111111;
+  --point: #222222;
   --olive: #6B7B5E;
 }
 
@@ -103,22 +103,22 @@ body {
 
 .hero-title {
   font-size: 3.5rem;
-  font-weight: 100;
+  font-weight: 200;
   letter-spacing: 0.3em;
   margin-bottom: 1.5rem;
-  color: var(--accent);
+  color: var(--text);
 }
 
 .hero-desc {
   font-size: 1.15rem;
-  font-weight: 200;
+  font-weight: 300;
   color: var(--text);
   line-height: 2.1;
   margin-bottom: 1.2rem;
 }
 
 .hero-sub {
-  font-size: 0.82rem;
+  font-size: 0.85rem;
   color: var(--muted);
   letter-spacing: 0.05em;
 }
