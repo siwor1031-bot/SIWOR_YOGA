@@ -123,6 +123,28 @@ body {
   letter-spacing: 0.05em;
 }
 
+.hero-links {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+}
+
+.hero-links a {
+  font-size: 0.82rem;
+  font-weight: 300;
+  color: var(--accent);
+  text-decoration: none;
+  padding: 0.6rem 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  transition: border-color 0.2s;
+}
+
+.hero-links a:hover {
+  border-color: var(--accent);
+}
+
 /* Sections */
 .section {
   padding: 5rem 2rem;
