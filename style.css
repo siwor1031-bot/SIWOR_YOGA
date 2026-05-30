@@ -316,44 +316,38 @@ body {
 
 /* Price */
 .price-block {
-  margin-bottom: 2rem;
-  padding-bottom: 2rem;
-  border-bottom: 1px solid var(--border);
-}
-
-.price-block:last-of-type {
-  border-bottom: none;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2.5rem;
 }
 
 .price-block-title {
   font-size: 0.9rem;
   font-weight: 300;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
   color: var(--accent);
 }
 
 .price-block-title em {
   font-style: normal;
-  font-size: 0.7rem;
+  font-size: 0.72rem;
   color: var(--olive);
   margin-left: 0.5rem;
 }
 
-.price-block--main {
-  padding: 1.8rem;
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  border-bottom: 1px solid var(--border);
+.price-block--main .price-block-title {
+  margin-bottom: 1rem;
 }
 
 .price-block-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.6rem 0;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--border);
   font-size: 0.95rem;
+}
+
+.price-block-row:first-of-type {
+  border-top: 1px solid var(--border);
 }
 
 .price-block-label {
@@ -369,7 +363,7 @@ body {
 }
 
 .price-note {
-  margin-top: 1.5rem;
+  margin-top: 2rem;
   font-size: 0.78rem;
   color: var(--muted);
   line-height: 1.8;
